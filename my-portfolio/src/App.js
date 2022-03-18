@@ -1,18 +1,17 @@
 import React, { useState } from "react";
-import PortfolioContainer from "./components/Portfolio";
-import About from "./components/";
+import PortfolioContainer from "./components/PortfolioContainer";
+import Header from "./components/Header";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("About");
 
-  const handlePageChange = (page) => setCurrentPage(page);
-
   return (
-    <div className="App container-fluid">
-      <header className="App-header">
-        <h1>Guleed, Hodan</h1>
-        <PortfolioContainer />
-      </header>
+    <div className="App ">
+      <Header setCurrentPage={setCurrentPage} currentPage={currentPage} />
+
+      <PortfolioContainer currentPage={currentPage} />
+
+      <footer></footer>
     </div>
   );
 }

@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
-function NavBar({ currentPage }) {
+function NavBar({ currentPage, setCurrentPage }) {
   return (
     <div>
       <ul className="nav nav-tabs justify-content-end flex-column">
         <li className="nav-item">
           <a
             href="#about"
-            onClick={() => handlePageChange("about")}
+            onClick={() => setCurrentPage("About")}
             className={currentPage === "About" ? "nav-link active" : "nav-link"}
           >
             About
@@ -16,7 +16,7 @@ function NavBar({ currentPage }) {
         <li className="nav-item">
           <a
             href="#portfolio"
-            onClick={() => handlePageChange("portfolio")}
+            onClick={() => setCurrentPage("Portfolio")}
             className={
               currentPage === "Portfolio" ? "nav-link active" : "nav-link"
             }
@@ -27,7 +27,7 @@ function NavBar({ currentPage }) {
         <li className="nav-item">
           <a
             href="#Resume"
-            onClick={() => handlePageChange("resume")}
+            onClick={() => setCurrentPage("Resume")}
             className={
               currentPage === "Resume" ? "nav-link active" : "nav-link"
             }
@@ -38,7 +38,7 @@ function NavBar({ currentPage }) {
         <li className="nav-item">
           <a
             href="#contact"
-            onClick={() => handlePageChange("contact")}
+            onClick={() => setCurrentPage("Contact")}
             className={
               currentPage === "Contact" ? "nav-link active" : "nav-link"
             }
